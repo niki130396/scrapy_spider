@@ -1,4 +1,11 @@
 # scrapy_spider
+REQUIRED LIBRARIES:
+ -- pip install scrapy
+ -- pip install django
+ -- pip install djangorestframework
+ -- pip install pyyaml
+ -- pip install django-rest-swagger
+
 
 SETPS FOR RUNNING THE PROJECT
 
