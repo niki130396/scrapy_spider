@@ -3,10 +3,12 @@ from rest_framework import filters
 from rest_framework.permissions import IsAuthenticated
 
 
+
 from parliment_api.models import Parliment
 from parliment_api.serializers import MPSerializer
 from parliment_api.pagination import Paginator
 # Create your views here.
+
 
 #TODO UNCOMMENT PERMISSION_CLASSES
 class ParliamentDataById(generics.RetrieveAPIView):
