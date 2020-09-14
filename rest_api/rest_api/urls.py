@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+from rest_framework.schemas import get_schema_view
+from django.views.generic import TemplateView
 
 from parliment_api import views
 
@@ -22,5 +24,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/', views.ParliamentData.as_view(), name='home'),
     re_path('search/', views.FilterParliamentData.as_view(), name='filtered_data'),
-    path('mp/<int:pk>/', views.ParliamentDataById.as_view(), name='mp_by_id')
+    path('mp/<int:pk>/', views.ParliamentDataById.as_view(), name='mp_by_id'),
+    path('apischema/', get_schema_view(
+        title='Parliament Data',
+        description='API that lets developers use parliament data',
+    ), name='api_schema'),
+    path('docs/', TemplateView.as_view(
+        template_name='documentation.html',
+        extra_content={'schema_url': 'api_schema'}
+    ), name='swagger-ui'),
 ]
