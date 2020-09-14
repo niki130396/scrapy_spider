@@ -4,7 +4,7 @@ REQUIRED LIBRARIES:
  -- pip install django
  -- pip install djangorestframework
  -- pip install pyyaml
- -- pip install django-rest-swagger
+ -- pip install drf-yasg
 
 
 SETPS FOR RUNNING THE PROJECT
