@@ -12,13 +12,13 @@ from parliment_api.pagination import Paginator
 
 #TODO UNCOMMENT PERMISSION_CLASSES
 class ParliamentDataById(generics.RetrieveAPIView):
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     serializer_class = MPSerializer
     queryset = Parliment.objects.all()
 
 
 class FilterParliamentData(generics.ListAPIView):
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     serializer_class = MPSerializer
     pagination_class = Paginator
     filter_backends = [filters.SearchFilter]
@@ -48,7 +48,7 @@ class FilterParliamentData(generics.ListAPIView):
 
 
 class ParliamentData(generics.ListAPIView):
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     serializer_class = MPSerializer
     pagination_class = Paginator
     filter_backends = [filters.SearchFilter]
